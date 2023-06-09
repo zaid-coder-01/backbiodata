@@ -38,9 +38,6 @@ const apiCategory=new mongoose.Schema({
     कुलदैवत:{
         type:String,
     },
-    फोटो:{
-        type:String,
-    },
     email:{
         type:String,  
     }
