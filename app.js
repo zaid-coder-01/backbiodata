@@ -28,13 +28,11 @@ const storage = new GridFsStorage({
 app.get('/',(req,res)=>{
 res.send("ok")
 })
-app.post('/biodata',upload.single("फोटो"),(req,res)=>{
+app.post('/biodata',upload.none(),(req,res)=>{
     const {नाव,जन्मतारीख,जन्माचीवेळ,जन्मस्थळ,नावरसनाव,धर्मजात,पत्ता,मो,नक्षत्र,देवक, गोत्र,कुलदैवत,email}=req.body;
-    const फोटो=req.file.filename;
-    const d=new Biodata({नाव,जन्मतारीख,जन्माचीवेळ,जन्मस्थळ,नावरसनाव,धर्मजात,पत्ता,मो,नक्षत्र,देवक, गोत्र,कुलदैवत,फोटो,email})
+    const d=new Biodata({नाव,जन्मतारीख,जन्माचीवेळ,जन्मस्थळ,नावरसनाव,धर्मजात,पत्ता,मो,नक्षत्र,देवक, गोत्र,कुलदैवत,email})
     try{
         d.save();
-        res.send(req.file.filename);
     }
     catch(e){
         res.send(e);
