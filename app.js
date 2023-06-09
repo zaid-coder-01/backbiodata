@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors());
 const { GridFsStorage } = require("multer-gridfs-storage");
 const storage = new GridFsStorage({
-    url: 'mongodb://localhost:27017/biodata',
+    url: 'mongodb+srv://zaidcoder01:Shahzaid1010@@biodata.stdklr9.mongodb.net/biodata',
     options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {
       return {
